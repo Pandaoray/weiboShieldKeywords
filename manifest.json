@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "微博屏蔽词增强助手",
+    "version": "2.0",
+    "description": "为微博屏蔽词提供一键式管理 ———— 一键续期、一键导入、一键导出、一键清空。 注意：受限于微博功能限制，非会员无法使用屏蔽词功能。",
+    "permissions": [
+        "clipboardWrite"
+    ],
+    "host_permissions": [
+      "https://weibo.com/set/shield?type=keyword"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://weibo.com/set/shield?type=keyword"],
+        "js": ["content.js"]
+      }
+    ]
+  }
